@@ -96,7 +96,13 @@ def num_nodes(tree):
         6
     """
 
-    pass
+    to_visit = [tree]
+    count = 0
+    while to_visit:
+        current = to_visit.pop(0)
+        count += 1
+        to_visit.extend(current.children)
+    return count
 
 #####################################################################
 # END OF ASSIGNMENT: You can ignore everything below.
